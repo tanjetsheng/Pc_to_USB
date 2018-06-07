@@ -1,0 +1,90 @@
+!SESSION 2018-06-07 15:28:22.848 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -pluginCustomization configuration/st_pref.ini -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -pluginCustomization configuration/st_pref.ini -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:29:33.398
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:29:33.438
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:29:33.448
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-07 15:29:33.768
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY fr.ac6.mcu.ide 1 1 2018-06-07 15:29:34.687
+!MESSAGE Started RMI Server, listening on port 21112
+!SESSION 2018-06-07 15:38:18.784 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -pluginCustomization configuration/st_pref.ini -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -pluginCustomization configuration/st_pref.ini -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:39:00.048
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:39:00.068
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:39:00.078
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-07 15:39:00.128
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY fr.ac6.mcu.ide 1 1 2018-06-07 15:39:00.648
+!MESSAGE Started RMI Server, listening on port 21112
+!SESSION 2018-06-07 15:40:50.901 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
+java.version=1.8.0_131
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -pluginCustomization configuration/st_pref.ini -product org.eclipse.epp.package.cpp.product C:\student\tjs\stm32\usb\spi\EWARM\Project.eww
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -pluginCustomization configuration/st_pref.ini -product org.eclipse.epp.package.cpp.product C:\student\tjs\stm32\usb\spi\EWARM\Project.eww
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:41:08.707
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:41:08.717
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.equinox.registry 4 1 2018-06-07 15:41:08.727
+!MESSAGE Executable extension definition for "resolver" not found.
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-06-07 15:41:08.777
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY fr.ac6.mcu.ide 1 1 2018-06-07 15:41:09.480
+!MESSAGE Started RMI Server, listening on port 21112
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-06-07 16:06:15.473
+!MESSAGE Indexed 'spi' (289 sources, 79 headers) in 5.12 sec: 12,212 declarations; 58,533 references; 0 unresolved inclusions; 75 syntax errors; 2,595 unresolved names (3.5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-06-07 16:33:31.597
+!MESSAGE Indexed 'spi' (18 sources, 66 headers) in 1.26 sec: 6,253 declarations; 17,458 references; 3 unresolved inclusions; 119 syntax errors; 2,131 unresolved names (8.2%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-06-07 16:37:42.479
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2018-06-07 16:37:42.488
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
