@@ -56,7 +56,9 @@ SPI_HandleTypeDef hspi2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_SPI1_Init(void);
+static void MX_SPI_Init(SPI_TypeDef * SPI,uint8_t Mode,uint8_t Direction,uint8_t DataSize,\
+		uint8_t Polarity,uint8_t Phase,uint8_t Nss,uint8_t Baudrate,uint8_t Firstbit,\
+		uint8_t Spi_Crc);
 static void MX_SPI2_Init(void);
 
 /* USER CODE BEGIN PFP */
@@ -76,10 +78,10 @@ static void MX_SPI2_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	char txBuffer[] ={0x10,0x20,0x30,0x40};
-		char slavetxBuffer[] ={0x1,0x2,0x3,0x4};
-		char rxBuffer[6];
-		char slaverxBuffer[6];
+	uint8_t  txBuffer[] ={0x10,0x20,0x30,0x40};
+	uint8_t  slavetxBuffer[] ={0x1,0x2,0x3,0x4};
+	uint8_t  rxBuffer[4];
+	uint8_t  slaverxBuffer[4];
 
 
   /* USER CODE END 1 */
@@ -102,7 +104,8 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_SPI1_Init();
+  MX_SPI_Init(SPI1,SPI_MODE_MASTER,SPI_DIRECTION_2LINES,SPI_DATASIZE_8BIT,SPI_POLARITY_LOW,\
+		  SPI_PHASE_1EDGE,SPI_NSS_SOFT,SPI_BAUDRATEPRESCALER_2,SPI_FIRSTBIT_MSB,SPI_CRCCALCULATION_DISABLE);
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 
@@ -117,12 +120,12 @@ int main(void)
 	  	  volatile HAL_StatusTypeDef result;
 
 
-	  	  result = HAL_SPI_Transmit(&hspi1, slavetxBuffer,4, 1000);
+	  	  result = HAL_SPI_TransmitReceive(&hspi1,slavetxBuffer,slaverxBuffer,4,500);
 	  	  	  	  if(result == HAL_ERROR){
 	  	  	  		  while(1);
 	  	  	  	  }
 
-	  	   result =  HAL_SPI_Receive(&hspi2,rxBuffer,4,1000);
+	  	   result =  HAL_SPI_TransmitReceive_IT(&hspi2,txBuffer,rxBuffer,4);
 	  	  	  		  if(result == HAL_ERROR){
 	  	  	  		 		  while(1);
 	  	  	  		 	  }
@@ -130,14 +133,15 @@ int main(void)
 	  	  HAL_Delay(500);
 
 	    	  result = HAL_SPI_GetState(&hspi2);
-	  	  for(i=0;i<4;i++){
-	  	  rxBuffer[i] =0;
-	  	  txBuffer[i] +=4;
+	  	//  for(i=0;i<4;i++){
+	  //	  rxBuffer[i] =0;
+	  //	  txBuffer[i] +=4;
+	  //	  }
   /* USER CODE BEGIN 3 */
 
-  }
-  /* USER CODE END 3 */
 
+  /* USER CODE END 3 */
+  }
 }
 
 /**
@@ -188,21 +192,23 @@ void SystemClock_Config(void)
 }
 
 /* SPI1 init function */
-static void MX_SPI1_Init(void)
+static void MX_SPI_Init(SPI_TypeDef * SPI,uint8_t Mode,uint8_t Direction,uint8_t DataSize,\
+		uint8_t Polarity,uint8_t Phase,uint8_t Nss,uint8_t Baudrate,uint8_t Firstbit,\
+		uint8_t Spi_Crc)
 {
 
   /* SPI1 parameter configuration*/
-  hspi1.Instance = SPI1;
-  hspi1.Init.Mode = SPI_MODE_MASTER;
-  hspi1.Init.Direction = SPI_DIRECTION_2LINES;
-  hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-  hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-  hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
-  hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
+  hspi1.Instance = SPI;
+  hspi1.Init.Mode = Mode;
+  hspi1.Init.Direction = Direction;
+  hspi1.Init.DataSize = DataSize;
+  hspi1.Init.CLKPolarity = Polarity;
+  hspi1.Init.CLKPhase = Phase;
+  hspi1.Init.NSS = Nss;
+  hspi1.Init.BaudRatePrescaler = Baudrate;
+  hspi1.Init.FirstBit = Firstbit;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
-  hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
+  hspi1.Init.CRCCalculation = Spi_Crc;
   hspi1.Init.CRCPolynomial = 10;
   if (HAL_SPI_Init(&hspi1) != HAL_OK)
   {
